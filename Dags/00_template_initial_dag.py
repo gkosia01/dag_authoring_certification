@@ -22,11 +22,9 @@ default_args = {
     # 'end_date': datetime(2016, 1, 1),
 }
 
-def say_hello_from_python():
-    print("Hello form python operator")
 
 with DAG(
- dag_id="01_basic_dag_structure"
+ dag_id="00_template_initial_dag"
 ,schedule_interval="@daily"
 ,default_args=default_args
 ,catchup=False
@@ -35,17 +33,9 @@ with DAG(
 
     start = DummyOperator(task_id="start_task")
 
-    pytask = PythonOperator(
-         task_id = "python_task"
-        ,python_callable = say_hello_from_python
-    )
-
-    bashtask = BashOperator(
-         task_id="bash_task"
-        ,bash_command='echo "Hello form bash task" '
-    )
 
     end = DummyOperator(task_id="end_task")
 
 
-    start >> pytask >> bashtask >> end
+    start  >> end
+

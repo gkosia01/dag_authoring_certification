@@ -6,7 +6,12 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 
-
+''' 
+    The backfilling allows to re run previous schedules from start date
+        We can set the catchup=True to cover past runs
+        We can clear the state of the dag run from UI in order to reschedule it automatically
+        Using the airflow CLI we can execte a dag for previous runs(on scheduler container):  airflow dags backfill -s <start_date> -e <end_Date> <dag_id>
+'''
 default_args = {
     'owner': 'Airflow',
     'start_date': datetime(2023, 1, 1),
@@ -22,11 +27,9 @@ default_args = {
     # 'end_date': datetime(2016, 1, 1),
 }
 
-def say_hello_from_python():
-    print("Hello form python operator")
 
 with DAG(
- dag_id="01_basic_dag_structure"
+ dag_id="05_backfilling"
 ,schedule_interval="@daily"
 ,default_args=default_args
 ,catchup=False
@@ -35,17 +38,9 @@ with DAG(
 
     start = DummyOperator(task_id="start_task")
 
-    pytask = PythonOperator(
-         task_id = "python_task"
-        ,python_callable = say_hello_from_python
-    )
-
-    bashtask = BashOperator(
-         task_id="bash_task"
-        ,bash_command='echo "Hello form bash task" '
-    )
 
     end = DummyOperator(task_id="end_task")
 
 
-    start >> pytask >> bashtask >> end
+    start  >> end
+
