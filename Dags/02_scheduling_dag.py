@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
                 Add the task to execution queue
 
     start_date: the datetime dag starts to scheduled   (datetime object)
-    schedule  : the frequency the dag will run (timedelta or cron)
+    schedule  : the frequency the dag will run (timedelta or cron or macros)
                        default "@daily"
     The scheduler will trigger the dag run when start_date + schedule_interval pass and will have execution date the start of the interval
         start_date = 2023-01-01 10:00:00
