@@ -40,7 +40,7 @@ default_args = {
 
 with DAG(
  dag_id="25_Dag_versioning_and_Dynamic_dags"
-,schedule=timedelta(minutes=1)
+,schedule=timedelta(minutes=2)
 ,default_args=default_args
 ,catchup=False
 ,tags=["DAG_AUTHORING_CERTIFICATION"]

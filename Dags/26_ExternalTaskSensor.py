@@ -38,7 +38,7 @@ default_args = {
 
 with DAG(
  dag_id="26_ExternalTaskSensor"
-,schedule=timedelta(minutes=1)
+,schedule=timedelta(minutes=3)
 ,default_args=default_args
 ,catchup=False
 ,tags=["DAG_AUTHORING_CERTIFICATION"]

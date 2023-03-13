@@ -9,7 +9,7 @@ from typing import Dict
 
 ''' 
     Taskflow api provide decorators to make the code size smaller and clener
-    We can use Taskflow api to handle beteer the xcoms 
+    We can use Taskflow api to handle beter the xcoms 
     Currently the following decorators are supported
         @task.python: a python operator task
         @task.virtualenv: execute a python operator to a new env
@@ -47,7 +47,7 @@ def say_hello():
     context = get_current_context()
     print(context)
 
-@task(do_xcom_push=False) # multiple_outputs=True
+@task(do_xcom_push=False) # multiple_outputs=True or Dict[str,str]
 def produce_some_xcoms() -> Dict[str,str] :
     return {"first_xcom": "value_of_first_xcom", "sec_xcom": "value_of_sec_xcom"}
 

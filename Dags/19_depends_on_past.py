@@ -32,7 +32,7 @@ def raise_an_exception():
     raise Exception()
 
 with DAG(
- dag_id="19_depends_on_previous_run"
+ dag_id="19_depends_on_past"
 ,schedule_interval="@daily"
 ,default_args=default_args
 ,catchup=True
