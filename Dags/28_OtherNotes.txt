@@ -13,6 +13,8 @@ Components of Airflow:
     Web sevrver: runs the UI
     Schedulter:  parse the dag files and schedules the tasks
     Database:    used to store metadata, xcoms and runs details
+    Executor:    handle running tasks
+    Worker:      run the actual tasks
 
 Airflow Home env variable:
 
@@ -32,3 +34,31 @@ Airflow cli command
 Airflow minimum requirements: at least Pythn 3.6, Pip, system level packages and preferable a constraint file
 
 Fernet key: used to encrypt variables and connections passwords and extra values
+
+
+Types of executor:
+
+    Sequential: 
+        It is the default
+        Is able to run only one task at a time
+        It can run using an sqllite
+
+    Local executor:
+
+        Runs within the Scheduler
+        Multiple tasks instance at a time
+        Cannot run with sqlit, need Mysql or pastgresql
+
+    Celery:
+
+        Run on dedicated machine(fixed machines)
+        Distributed task queue (RabbitMQ)
+        Fault tolerant, Horizontal scaling
+
+        Not cost effective, time to setup, resources wastage if not utilized
+
+    Kubernetes Executor:
+
+        Load executors in dedicated pods
+        Depend on the need kubernetes load dynamiccaly new pods
+        When dont have requests  the pods are deallocated 
