@@ -1,0 +1,34 @@
+UI DAG views:
+
+    Graph view: see the dag and tasks
+    Tree view:  see the historic runs and status
+    Gantt view: see the timeline of ta tasksk in the dag run
+
+Task typical journey:
+
+    No status -> Scheduled -> Queued -> Running -> Success 
+
+Components of Airflow:
+    
+    Web sevrver: runs the UI
+    Schedulter:  parse the dag files and schedules the tasks
+    Database:    used to store metadata, xcoms and runs details
+
+Airflow Home env variable:
+
+    AIRFLOW_HOME='~/airflow'
+
+Use Celery Executor:
+
+    Setup a queue brocker
+    Setup result backend
+    Setup workers
+
+Airflow cli command
+
+    airflow dags backfill -s <> -e <> <dag_id>: run historic dag runs
+    airflow db init: 
+
+Airflow minimum requirements: at least Pythn 3.6, Pip, system level packages and preferable a constraint file
+
+Fernet key: used to encrypt variables and connections passwords and extra values
