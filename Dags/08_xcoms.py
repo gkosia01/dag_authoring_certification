@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 
 '''
     Xcoms can be use to exchange small amount of data between the tasks
-    They are stored in teh metadata database 
+    They are stored in the metadata database 
     To access a specific xcom you need the ti (task instance)
 
 '''

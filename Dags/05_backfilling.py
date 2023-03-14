@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
     The backfilling allows to re run previous schedules from start date
         We can set the catchup=True to cover past runs
         We can clear the state of the dag run from UI in order to reschedule it automatically
-        Using the airflow CLI we can execte a dag for previous runs(on scheduler container):  airflow dags backfill -s <start_date> -e <end_Date> <dag_id>
+        Using the airflow CLI we can execute a dag for previous runs(on scheduler container):  airflow dags backfill -s <start_date> -e <end_Date> <dag_id>
 '''
 default_args = {
     'owner': 'Airflow',

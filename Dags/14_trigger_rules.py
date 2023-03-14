@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 '''
     By default a task will be executed when start_time + schedule has passed and all the upstream has completed
 
-    Some times we want a task to be executed only under other conditions of the upstream
+    Some times we want a task to be executed under other conditions of the upstream
     
     all_success: (default) all parents have succeeded
     all_failed: all parents are in a failed or upstream_failed state

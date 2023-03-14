@@ -8,7 +8,7 @@ from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 ''' 
     trigger_dag_id
-    execution_date: string or datetime object  trigger as of date (backfilling)
+    execution_date: string or datetime object in order to trigger as of date (backfilling)
     wait_for_completion= True/False
     poke_interval time to check if completed (default 60 seconds)
     reset_dag_run=True/False (default True): in airflow cannot have two dag runs for the same execution date so this property will set the current execution as of that execution date run

@@ -6,10 +6,10 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 ''' 
-    If we want to run the task only if in its previous execution completed succesfully or skipped
+    If we want to run the task only if at its previous execution completed succesfully or skipped
     We can use depends_on_past=True to force airflow to check first its previous execution
 
-        As best practice set the retries=0 because if the previous run failed then airflow will always retry to execute the task 
+        As best practice set the retries=0 because if at the previous run failed then airflow will always retry to execute the task 
                     also set the execution_timeout in case the previous run failed the current will run for ever with no status
 '''
 

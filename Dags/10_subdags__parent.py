@@ -18,7 +18,7 @@ from airflow.operators.subdag import SubDagOperator
         as subdag_id the task id of the SubDagOperator
         and the default_args of the parent
 
-    The main dag will show the sub dag as a task. In order to see the subdag you have to click on the SubDagOperator task-> Zoom in 
+    The main dag will shown the sub dag as a task. In order to see the subdag you have to click on the SubDagOperator task-> Zoom in 
 
 '''
 

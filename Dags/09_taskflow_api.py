@@ -9,7 +9,7 @@ from typing import Dict
 
 ''' 
     Taskflow api provide decorators to make the code size smaller and clener
-    We can use Taskflow api to handle beter the xcoms 
+    We can use Taskflow api to handle better the xcoms 
     Currently the following decorators are supported
         @task.python: a python operator task
         @task.virtualenv: execute a python operator to a new env

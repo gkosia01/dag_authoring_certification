@@ -5,7 +5,18 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
+''' 
+    At the minimum a dag file should contain:
+        An airflow DAG object and one or more operators
+        The dag object has as required parameters:
+             The dag_id which should be unique on the instance
+             The start date (datetime object) which is the date the dag will start to be scheduled
+        The schedule is the interval of dag run and by default is None, can be a timedelta object, an airflow macro or a cron expression
 
+        A task its the representation of an operator. Each operator type has its own properties but all of them should have a task_id which should be unique in the dag
+
+
+'''
 
 default_args = {
     'owner': 'Airflow',

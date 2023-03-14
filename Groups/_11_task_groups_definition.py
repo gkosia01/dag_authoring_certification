@@ -3,6 +3,7 @@ from airflow.operators.dummy import DummyOperator
 
 '''
     The task group file should contain a function that creates and return a taskgroup
+    A taskgroup can contains another one taskgroup
     In Taskflow api there is also the @task_group decorator
 
 '''

@@ -9,8 +9,6 @@ from airflow.decorators import task
 ''' 
     The data of the dynamic tasks should be known when scheduler will parse the dag file in order to produce the dag
     For this reason we can use only static dictionary, variable or a connection to produce dynamic tasks
-
-
 '''
 
 default_args = {

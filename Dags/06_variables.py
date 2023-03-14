@@ -12,12 +12,13 @@ from airflow.models import Variable
     Variables are Key-value pairs and they are stored in metadata database
     Airflow will hide the value in the UI and in the logs if the name of the variable contains the words secret or password
     If we have variables that they are used together it is a best practice to create the variables as dict to avoid multiple connections to the metadata database
+    Variables can be passed also using templating by {{var.value.<variblekey>}} or {{var.json.<variablekey>.<property>}} is is dictionary
 
     We can specify Environment variables by login into the scheduler container and execute 
         export AIRFLOW_VAR_<VARIABLE KEY>=<VARIABLE VALUE>
         to check the available variables execute env | grep  AIRFLOW_VAR_
 
-        To create a glopal env variable go to docker-compose file and add the variables under scheduler and webserver processes
+        To create a global env variable go to docker-compose file and add the variables under scheduler and webserver processes
 
     We can use env variables to avoid many connections to the metadata database and to hide the variables because they are not visible through UI
 '''

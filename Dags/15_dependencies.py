@@ -8,7 +8,7 @@ from airflow.models.baseoperator import cross_downstream, chain
 
 
 ''' 
-     << or set_upstream(), >> or set_downstream() 
+     << or t2.set_upstream(t1), >> or t1.set_downstream(t2) 
      one to multiple t1 >> [t2,t3,t4]
 
      Cross dependencies: 

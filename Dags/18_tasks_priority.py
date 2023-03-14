@@ -13,9 +13,9 @@ from datetime import datetime, timedelta
     The higher the number is, the higher the priority
 
     We can use also the priority_rule
-        downstream (default): the sum of priority_weight of the downstream
-        upstream: the sum of priority_weight of the upstream
-        absolute: baseed on the priority_weight of the task
+        downstream (default): task weight is the sum of priority_weight of the downstream
+        upstream: task weight is the sum of priority_weight of the upstream
+        absolute: task weight is based on the priority_weight of the task
 
         The idea behind the priority_rule is to give priotiry to the tasks of downstream or upstream in case we have multiple dag runs
 '''

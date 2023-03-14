@@ -37,7 +37,7 @@ default_args = {
 }
 
 def print_some_macros(*opargs):
-    print(f"0: {opargs[0]}, 0: {opargs[1]}, 0: {opargs[2]}")
+    print(f"0: {opargs[0]}, 1: {opargs[1]}, 2: {opargs[2]}")
 
 
 with DAG(
